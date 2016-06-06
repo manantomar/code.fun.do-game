@@ -8,19 +8,19 @@ public class rotate : MonoBehaviour {
 	float yDeg;
 	Quaternion fromRotation;
 	Quaternion toRotation;
-	float lerpSpeed = 2.0f;
+	public float lerpSpeed = 16.0f;
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButton(0)&&(transform.rotation. <= 45)&&(transform.rotation.eulerAngles.y <= 45)) {
+		if(Input.GetMouseButton(0)) {
 			
 			xDeg -= Input.GetAxis ("Mouse X");
 			yDeg += Input.GetAxis ("Mouse Y");
 			fromRotation = transform.rotation;
-			toRotation = Quaternion.Euler(yDeg,xDeg,0);
+			toRotation = Quaternion.Euler(2*yDeg,2*xDeg,0);
 			transform.rotation = Quaternion.Lerp(fromRotation,toRotation,Time.deltaTime  * lerpSpeed);
 		}
 
