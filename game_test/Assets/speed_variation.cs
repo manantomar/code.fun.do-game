@@ -5,26 +5,35 @@ public class speed_variation : MonoBehaviour {
 
 	// Use this for initialization
 	public float speed ;
-	Vector3 prevpos ;
+	Vector3 vec ;
 	Rigidbody rb;
-	Vector3 vel ;
+	public Vector3 force ;
+	public GameObject plane;
 	void Start () {
-	
+
 		rb = gameObject.GetComponent<Rigidbody> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		vel = rb.velocity.normalized;
-		if (rb.velocity.magnitude > 1.2) {
-			rb.velocity -= 0.05f * Time.deltaTime * vel;
-		}
+		//vel = rb.velocity.normalized;
+		//if (rb.velocity.magnitude > 1.2) {
+			//rb.velocity -= 0.05f * Time.deltaTime * vel;
+		//}
+		vec = plane.transform.position -  gameObject.transform.position;
 	}
 
-	void FixedUpdate () {
+	//void FixedUpdate () {
 
-		speed = (transform.position - prevpos).magnitude; 
-		prevpos = transform.position;
+		//speed = (transform.position - prevpos).magnitude; 
+		//prevpos = transform.position;
+	//}
+
+	void OnTriggerEnter (Collider other){
+
+		if (other.gameObject.tag == "hit") {
+			rb.AddForce (vec*100);
+		}
 	}
 }

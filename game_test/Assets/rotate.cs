@@ -17,10 +17,10 @@ public class rotate : MonoBehaviour {
 	void Update () {
 		if(Input.GetMouseButton(0)) {
 			
-			xDeg -= Input.GetAxis ("Mouse X");
+			xDeg += Input.GetAxis ("Mouse X");
 			yDeg += Input.GetAxis ("Mouse Y");
 			fromRotation = transform.rotation;
-			toRotation = Quaternion.Euler(2*yDeg,2*xDeg,0);
+			toRotation = Quaternion.Euler(2*xDeg,2*yDeg,2*yDeg);
 			transform.rotation = Quaternion.Lerp(fromRotation,toRotation,Time.deltaTime  * lerpSpeed);
 		}
 
