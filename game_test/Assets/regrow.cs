@@ -6,7 +6,7 @@ using System.Collections;
 public class regrow : MonoBehaviour {
 
 	// Use this for initialization
-	public float time = 5.0f;
+	public float time = 2000.0f;
 	public GameObject ball;
 	public bool flag;
 
@@ -23,7 +23,7 @@ public class regrow : MonoBehaviour {
 		if (flag == true) {
 
 			if(transform.localScale.x < 1.311)
-			transform.localScale += new Vector3 (Time.deltaTime / time, 0, 0);
+				transform.localScale += new Vector3 (Time.deltaTime /time, 0, 0);
 		}
 
 	}
