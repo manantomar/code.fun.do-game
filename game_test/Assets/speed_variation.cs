@@ -12,6 +12,7 @@ public class speed_variation : MonoBehaviour {
 	public GameObject plane;
 	public GameObject screen;
 	public Text score;
+	public Text hiscore;
 	public Text game_over;
 	public float point;
 	public float hitforce = 100.0f;
@@ -35,6 +36,7 @@ public class speed_variation : MonoBehaviour {
 			//rb.velocity -= 0.05f * Time.deltaTime * vel;
 		//}
 		vec = plane.transform.position -  gameObject.transform.position;
+
 		//rb.AddForce(new Vector3(0,-10,0));
 	}
 
@@ -58,11 +60,14 @@ public class speed_variation : MonoBehaviour {
 		}
 
 		if (other.gameObject.tag == "game_over") {
+			if (GameObject.FindGameObjectsWithTag ("hit").Length == 1) {
+				game_over.GetComponent<Text> ().enabled = true;
+				score.GetComponent<Text> ().enabled = false;
+				screen.GetComponent<Renderer> ().enabled = true;
+				chip = true;
 
-			game_over.GetComponent<Text> ().enabled = true;
-			score.GetComponent<Text> ().enabled = false;
-			screen.GetComponent<Renderer> ().enabled = true;
-			chip = true;
+			}
+			Destroy (gameObject);
 
 		}
 	}
@@ -71,6 +76,7 @@ public class speed_variation : MonoBehaviour {
 	public void start_play(){
 
 		score.GetComponent<Text> ().enabled = true;
+		hiscore.GetComponent<Text> ().enabled = true;
 		start.GetComponent<Text> ().enabled = false;
 		screen_1.GetComponent<Renderer> ().enabled = false;
 		play.GetComponent<Image> ().enabled = false;

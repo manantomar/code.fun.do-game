@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\speed_variation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\taglen.cs">
     <Files>
-      <File FileName="Assets\regrow.cs" Line="9" Column="26" />
-      <File FileName="Assets\rotate.cs" Line="32" Column="46" />
-      <File FileName="Assets\hit_wall.cs" Line="22" Column="3" />
-      <File FileName="Assets\speed_variation.cs" Line="76" Column="26" />
+      <File FileName="Assets\hiscore.cs" Line="23" Column="29" />
+      <File FileName="Assets\speed_variation.cs" Line="68" Column="5" />
+      <File FileName="Assets\pups.cs" Line="18" Column="25" />
+      <File FileName="Assets\taglen.cs" Line="14" Column="61" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
