@@ -62,6 +62,7 @@ public class speed_variation : MonoBehaviour {
 		if (other.gameObject.tag == "game_over") {
 			if (GameObject.FindGameObjectsWithTag ("hit").Length == 1) {
 				game_over.GetComponent<Text> ().enabled = true;
+				hiscore.GetComponent<Text> ().enabled = true;
 				score.GetComponent<Text> ().enabled = false;
 				screen.GetComponent<Renderer> ().enabled = true;
 				chip = true;
@@ -76,7 +77,6 @@ public class speed_variation : MonoBehaviour {
 	public void start_play(){
 
 		score.GetComponent<Text> ().enabled = true;
-		hiscore.GetComponent<Text> ().enabled = true;
 		start.GetComponent<Text> ().enabled = false;
 		screen_1.GetComponent<Renderer> ().enabled = false;
 		play.GetComponent<Image> ().enabled = false;
